@@ -24,7 +24,9 @@ def cannibal_numbers(values, query):
                 return result
             # Check that the prey is not bigger than the query already.
             # Eat it if it's not
-            if values[i_prey] < query and pred < query:
+            if (prey < query
+                and pred < query
+                and pred > prey):
                 pred += 1
                 preys_eaten += 1
 
@@ -38,6 +40,8 @@ if __name__ == '__main__':
     ####### Get user input #######
     values = [21, 9, 5, 8, 10, 1, 3]
     queries = [10, 15]
+    #values = [2, 2, 2, 2]
+    #queries = [3]
     #values = [3, 3, 3, 2, 2, 2, 1, 1, 1]
     #queries = [4]
     #values = [1, 2, 3, 4, 5]
