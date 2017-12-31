@@ -15,14 +15,15 @@ public class Bankers {
         
         int[][] result = get_bankers(proc, avail);
 
-        if (result != null)
+        if (result != null) {
             // Print in order the solution
+            System.out.print("Solution: ");
             for (int i = result.length - 1; i >= 0; i --) {
                 int[] p = proc[i];
                 System.out.print("P" + p[PID_IDX] + " ");
             }
-        else
-            System.out.println("There is no way to complete the algorithm for the given processes");
+        }
+        else System.out.println("There is no way to complete the algorithm for the given processes");
     }
 
     public static int[][] get_bankers(int[][] proc, int[] avail) {
