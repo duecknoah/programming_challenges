@@ -10,14 +10,17 @@ public class Bankers {
             {2, 0, 0, 3, 2, 2, 1},
             {3, 0, 2, 9, 0, 2, 2},
             {2, 1, 1, 2, 2, 2, 3},
-            {0, 0, 2, 4, 3, 3, 4}
+            {0, 0, 2, 4, 3, 3, 4},
         };
         
         int[][] result = get_bankers(proc, avail);
 
         if (result != null)
-            for (int[] i : result)
-                System.out.print("P" + i[PID_IDX] + " ");
+            // Print in order the solution
+            for (int i = result.length - 1; i >= 0; i --) {
+                int[] p = proc[i];
+                System.out.print("P" + p[PID_IDX] + " ");
+            }
         else
             System.out.println("There is no way to complete the algorithm for the given processes");
     }
@@ -59,5 +62,4 @@ public class Bankers {
 
         return null;
     }
-
 }
