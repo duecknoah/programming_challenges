@@ -12,4 +12,4 @@ what_day_is_it: https://www.reddit.com/r/dailyprogrammer/comments/79npf9/2017103
 baum_sweet_sequence: https://www.reddit.com/r/dailyprogrammer/comments/7j33iv/20171211_challenge_344_easy_baumsweet_sequence/
 bankers_algorithm: https://www.reddit.com/r/dailyprogrammer/comments/7jkfu5/20171213_challenge_344_intermediate_bankers/
 tally_program: https://www.reddit.com/r/dailyprogrammer/comments/8jcffg/20180514_challenge_361_easy_tally_program/
-
+dice_roller: https://old.reddit.com/r/dailyprogrammer/comments/8s0cy1/20180618_challenge_364_easy_create_a_dice_roller/
