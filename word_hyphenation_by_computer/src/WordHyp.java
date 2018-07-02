@@ -4,11 +4,12 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class WordHyp {
-    private static List<String> patterns = loadPatterns();
+    private static List<String> patterns = load("tex-hyphenation-patterns.txt");
 
-    public static List<String> loadPatterns() {
+    public static List<String> load(String filename) {
+        // loads all of the lines of a file into a list
         try {
-            patterns = Files.readAllLines(Paths.get("tex-hyphenation-patterns.txt"));
+            patterns = Files.readAllLines(Paths.get(filename));
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -17,6 +18,7 @@ public class WordHyp {
     }
 
     public static String hyphenateWord(String word) {
+        // Returns a the hyphenated word
         ArrayList<HashMap<Integer, Integer>> matches = getMatches(word);
         int[] final_vals = new int[word.length()];
 
@@ -66,6 +68,8 @@ public class WordHyp {
     }
 
     public static HashMap<Integer, Integer> getMatchValuesOf(String pattern, String word) {
+        // Gets the matched values of a single word
+        // see getMatches(...) for more info
         int matchLoc = getMatchLoc(word, pattern);
 
         if (matchLoc == -1)
@@ -73,7 +77,7 @@ public class WordHyp {
 
         HashMap<Integer, Integer> matched_vals = new HashMap<>();
         int pattern_idx = 0;
-        for (int i = matchLoc; pattern_idx < pattern.length(); i ++) {
+        for (int i = matchLoc; pattern_idx < Math.min(pattern.length(), word.length() - matchLoc); i ++) {
             char current = pattern.charAt(pattern_idx);
 
             while ((Character.isDigit(current) || current == '.')) {
@@ -109,7 +113,12 @@ public class WordHyp {
     }
 
     public static void main(String[] args) {
-        //System.out.println(getMatchLoc("mistranslate", "m2is"));
-        System.out.println(hyphenateWord("recursion "));
+        //System.out.println(hyphenateWord("recursion "));
+        String[] words = {
+                "mistranslate", "alphabetical", "bewildering", "buttons",
+                "ceremony", "hovercraft", "lexicographically", "programmer", "recursion"
+        };
+        for (String s : words)
+            System.out.println(hyphenateWord(s));
     }
 }
