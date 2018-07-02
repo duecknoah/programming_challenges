@@ -15,3 +15,4 @@ Each item in this listing contains the directories name with a link to its chall
 [bankers_algorithm](https://www.reddit.com/r/dailyprogrammer/comments/7jkfu5/20171213_challenge_344_intermediate_bankers/): An algorithm to prevent deadlocks from happening in processes.  
 [tally_program](https://www.reddit.com/r/dailyprogrammer/comments/8jcffg/20180514_challenge_361_easy_tally_program/): Gets the scores of players based off a single input string.  
 [dice_roller](https://old.reddit.com/r/dailyprogrammer/comments/8s0cy1/20180618_challenge_364_easy_create_a_dice_roller/): A D&D dice roller.  
+[word_hyphenation_by_computer](https://www.reddit.com/r/dailyprogrammer/comments/8qxpqd/20180613_challenge_363_intermediate_word/): Automatically hyphenates any given word.
